@@ -7,7 +7,7 @@
 	"main": "dist/background.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "tsc",
+		"build": "esbuild src/content.ts --bundle --format=iife --outfile=dist/content.js",
 		"watch": "tsc --watch"
 	},
 	"keywords": [
@@ -19,6 +19,7 @@
 	"license": "MIT",
 	"devDependencies": {
 		"chrome-types": "^0.1.464",
+		"esbuild": "^0.28.2",
 		"typescript": "^7.0.2"
 	}
 }
