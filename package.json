@@ -1,0 +1,24 @@
+{
+	"name": "mambo-everywhere",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"description": "A Chrome extension that play the sound Mambo probably everywhere.",
+	"main": "dist/background.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "tsc",
+		"watch": "tsc --watch"
+	},
+	"keywords": [
+		"Extension",
+		"Mambo",
+		"Umamusume"
+	],
+	"author": "Chandaek",
+	"license": "MIT",
+	"devDependencies": {
+		"chrome-types": "^0.1.464",
+		"typescript": "^7.0.2"
+	}
+}
