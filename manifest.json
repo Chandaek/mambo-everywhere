@@ -6,7 +6,7 @@
 	"permissions": [],
 	"content_scripts": [
 		{
-			"matchs": ["<all_urls>"],
+			"matches": ["<all_urls>"],
 			"js": ["dist/content.js"],
 			"run_at": "document_idle"
 		}
