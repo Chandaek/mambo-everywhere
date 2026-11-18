@@ -7,6 +7,9 @@ A Chrome extension that brings Mambo to your browsing experience.
 ## Features
 
 - **Interactive Mambo:** Plays Mambo when interacting with supported website elements.
+- **Trigger Customization:** Choose which interactive elements can trigger Mambo.
+- **Playback Settings:** Adjust Mambo's playback volume to your preference.
+- **Statistics:** Track total Mambo plays and see when Mambo last appeared.
 
 ## Installation
 

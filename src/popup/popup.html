@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mambo Everywhere</title>
+	<link rel="stylesheet" href="popup.css">
+	<script src="popup.js" defer></script>
+</head>
+<body>
+	<header>
+		<h1>Mambo Everywhere</h1>
+		<p>Mambo. Proudly everywhere.</p>
+	</header>
+
+	<main>
+		<section>
+			<h2>Interactive Elements</h2>
+			<div id="interactive-elements"></div>
+		</section>
+
+		<section>
+			<h2>General</h2>
+			<div class="setting-row">
+				<label for="volume">Playback Volume</label>
+				<output id="volume-value" for="volume">100%</output>
+			</div>
+			<input id="volume" type="range" min="0" max="100" value="100">
+		</section>
+
+		<section>
+			<h2>Statistics</h2>
+			<div class="statistic">
+				<span>Total Mambo Plays</span>
+				<strong id="total-plays">0</strong>
+			</div>
+			<div class="statistic">
+				<span>Last Played</span>
+				<strong id="last-played">Never</strong>
+			</div>
+			<button id="reset-statistics" type="button">Reset Statistics</button>
+		</section>
+	</main>
+</body>
+</html>

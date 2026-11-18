@@ -1,3 +1,4 @@
+
 import esbuild from "esbuild";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -17,23 +18,38 @@ const manifest = JSON.parse(
 
 const distDirectory = path.join(root, "dist");
 const buildDirectory = path.join(root, "build");
+const popupDirectory = path.join(distDirectory, "popup");
+
 const archiveName = `${packageJson.name}-v${manifest.version}.zip`;
 
 await fs.rm(distDirectory, { recursive: true, force: true });
-await fs.mkdir(distDirectory, { recursive: true });
+await fs.mkdir(popupDirectory, { recursive: true });
 await fs.mkdir(buildDirectory, { recursive: true });
 
 await esbuild.build({
-	entryPoints: [path.join(root, "src/content.ts")],
+	entryPoints: [
+		path.join(root, "src/content.ts"),
+		path.join(root, "src/popup/popup.ts"),
+	],
 	bundle: true,
 	format: "iife",
-	outfile: path.join(distDirectory, "content.js"),
-	target: "chrome120"
+	outdir: distDirectory,
+	target: "chrome120",
 });
 
 await fs.copyFile(
 	path.join(root, "manifest.json"),
 	path.join(distDirectory, "manifest.json")
+);
+
+await fs.copyFile(
+	path.join(root, "src/popup/popup.html"),
+	path.join(popupDirectory, "popup.html")
+);
+
+await fs.copyFile(
+	path.join(root, "src/popup/popup.css"),
+	path.join(popupDirectory, "popup.css")
 );
 
 await fs.cp(
